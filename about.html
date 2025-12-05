@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Varenya Skin Care Premium Dermatology & Skin Care Clinic</title>
+    <link rel="icon" type="images" sizes="32x32" href="assets/title-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4a90e2;
+            --secondary: #f06292;
+            --accent: #7e57c2;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #777;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: var(--secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            /* background: white; */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: #0f1a2b; /* dark navy */
+            color: #f8fafc;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .logo img {
+            width: 105px;  /* adjust size as needed */
+            height: 75px;  /* keeps proper aspect ratio */
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f8fafc;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a.active {
+            color: #ff7eb3; /* brighter pink */
+            font-weight: 700;
+        }
+        nav ul li a:hover:after,
+        nav ul li a.active:after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .appointment-btn {
+            margin-left: 20px;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,255,0.6), rgba(0,0,180,0.6)), url('/assets/Banner-skin.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            margin-top: 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .breadcrumb li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .breadcrumb li:after {
+            content: '/';
+            position: absolute;
+            right: -15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .breadcrumb li:last-child:after {
+            display: none;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+        }
+
+        .breadcrumb .current {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* About Intro */
+        .about-intro {
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-content {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        .about-intro h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .about-intro p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-features {
+            margin: 30px 0;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .feature i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        /* Mission & Vision */
+        .mission-vision {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .mv-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .mv-card {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 30px;
+        }
+
+        .mv-card h3 {
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .mv-card p {
+            color: var(--text-light);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* Values Section */
+        .values {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .value-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 100px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .team-card:hover .team-image img {
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 20px;
+        }
+
+        .team-info h3 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .team-info p {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--light);
+            color: var(--dark);
+            transition: all 0.3s;
+        }
+
+        .team-social a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(rgba(74, 144, 226, 0.9), rgba(74, 144, 226, 0.9)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--primary);
+            border: 2px solid white;
+        }
+
+        .cta .btn:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-intro {
+                flex-direction: column;
+            }
+
+            .about-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+
+            .mv-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .page-header h1 {
+                font-size: 36px;
+            }
+        }
+
+        /* Appointment Modal Styles */
+        .appointment-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .appointment-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .appointment-modal {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .appointment-modal-overlay.active .appointment-modal {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 30px;
+            border-bottom: 1px solid #eee;
+            background: linear-gradient(135deg, #4a90e2 0%, #7e57c2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #f06292;
+        }
+
+        .modal-content {
+            padding: 30px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+        }
+
+        .success-message.active {
+            display: flex;
+        }
+
+        .success-message i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .modal-header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <!-- <div class="logo">
+                <div class="logo-text">Glow<span>Skin</span></div>
+            </div>-->
+            <div class="logo"> 
+                <a href="home.html">
+                    <img src="/assets/logo-transparent.png" alt="varenya Logo">
+                </a>
+            </div>
+
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="javascript:void(0)" class="btn btn-primary appointment-btn"
+                    onclick="openAppointmentModal()">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Us</h1>
+            <ul class="breadcrumb">
+                <li><a href="home.html">Home</a></li>
+                <li class="current">About Us</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About Intro -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="about-content">
+                <h2>Your Trusted Skin Care Partner</h2>
+                <p>At Varenya Skin Care Clinic, we believe that healthy, radiant skin is within everyone's reach. Founded in
+                    2008, our clinic has been at the forefront of dermatological care, combining medical expertise with
+                    cutting-edge technology to deliver exceptional results for our patients.</p>
+
+                <p>Our team of board-certified dermatologists and skincare specialists are passionate about helping you
+                    achieve your skin health goals. We take a comprehensive approach to skincare, addressing not just
+                    the symptoms but the underlying causes of skin concerns.</p>
+
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <p>15+ years of dermatological excellence</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <p>10,000+ satisfied patients</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <p>State-of-the-art treatment facilities</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Personalized care plans for every patient</p>
+                    </div>
+                </div>
+
+                <a href="services.html" class="btn btn-primary">Explore Our Services</a>
+            </div>
+
+            <div class="about-image">
+                <img src="/assets/women1.jpg" alt="women">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-container">
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide exceptional, personalized dermatological care using the latest evidence-based
+                        treatments and technologies. We are committed to helping every patient achieve healthy,
+                        beautiful skin through comprehensive diagnosis, effective treatment, and ongoing education.</p>
+                </div>
+
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading dermatology clinic recognized for excellence in patient care, innovation in
+                        treatment approaches, and commitment to advancing the field of dermatology. We envision a future
+                        where everyone has access to the knowledge and treatments needed for optimal skin health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-text">Years of Experience</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number" data-count="10000">0</div>
+                    <div class="stat-text">Happy Patients</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number" data-count="8">0</div>
+                    <div class="stat-text">Expert Dermatologists</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-text">Skin Treatments</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do at Varenya Skin Care Clinic</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Expertise</h3>
+                    <p>Our dermatologists are board-certified with specialized training and continuous education to
+                        provide the highest standard of care.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Compassion</h3>
+                    <p>We listen to your concerns with empathy and develop treatment plans that respect your individual
+                        needs and lifestyle.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We stay at the forefront of dermatological advancements, incorporating the latest research and
+                        technologies into our practice.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Personalized Care</h3>
+                    <p>Every treatment plan is tailored to your unique skin type, concerns, and goals for optimal
+                        results.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety</h3>
+                    <p>We prioritize your safety with stringent protocols, sterile environments, and FDA-approved
+                        treatments.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>We believe in empowering our patients with knowledge about their skin health for long-term
+                        results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Leadership</h2>
+                <p>The experienced professionals leading our clinic to excellence</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="Dr. Sarah Johnson">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>Founder & Medical Director</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="Dr. Michael Chen">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Michael Chen</h3>
+                        <p>Head of Cosmetic Dermatology</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="Dr. James Wilson">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. James Wilson</h3>
+                        <p>Clinical Research Director</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Skin Journey?</h2>
+            <p>Book your consultation today and take the first step towards healthier, more radiant skin.</p>
+            <a href="javascript:void(0)" class="btn appointment-btn" onclick="openAppointmentModal()">Schedule an Appointment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Varenya Skin Care Clinic</h3>
+                    <p>Your trusted partner for all your dermatological needs. We provide comprehensive skin care
+                        solutions with a personalized approach.</p>
+                    <div class="footer-social">
+                        <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=61581596850064"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" rel="noopener" href="https://youtube.com/@varenyaskincare?si=uq7XgwkPuf8M3Jxc"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/varenyaskincare/"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/varenya-skin-care-58b0a6388/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Acne Treatment</a></li>
+                        <li><a href="#">Skin Consultation</a></li>
+                        <li><a href="#">Chemical Peels</a></li>
+                        <li><a href="#">Laser Treatments</a></li>
+                        <li><a href="#">Anti-Aging Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Plot Number -13, near Jagannath Temple Road, Kolathia, Khandagiri, Bhubaneswar, Odisha 751030</li>
+                        <li><i class="fas fa-phone"></i> +91 97771 71199</li>
+                        <li><i class="fas fa-envelope"></i> mishrajibanjyoti@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 6pm-9pm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Varenya Skin Care Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Appointment Booking Modal -->
+    <div class="appointment-modal-overlay" id="appointmentModal">
+        <div class="appointment-modal">
+            <div class="modal-header">
+                <h2>Book Your Appointment</h2>
+                <button class="close-modal" id="closeAppointmentModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="success-message" id="appointmentSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Thank you for your appointment request!</strong><br>
+                        We'll contact you within 24 hours to confirm your appointment.
+                    </div>
+                </div>
+
+                <form id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientFirstName" class="form-label">First Name *</label>
+                            <input type="text" id="patientFirstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientLastName" class="form-label">Last Name *</label>
+                            <input type="text" id="patientLastName" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientEmail" class="form-label">Email Address *</label>
+                            <input type="email" id="patientEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientPhone" class="form-label">Phone Number *</label>
+                            <input type="tel" id="patientPhone" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentDate" class="form-label">Preferred Date *</label>
+                        <input type="date" id="appointmentDate" class="form-control" required min="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentTime" class="form-label">Preferred Time *</label>
+                        <select id="appointmentTime" class="form-control" required>
+                            <option value="">Select a time</option>
+                            <option value="06:00">06:00 PM</option>
+                            <option value="06:30">06:30 PM</option>
+                            <option value="07:00">07:00 PM</option>
+                            <option value="07:30">07:30 PM</option>
+                            <option value="08:00">08:00 PM</option>
+                            <option value="08:30">08:30 PM</option>
+                            <!-- <option value="09:00">9:00 AM</option>
+                            <option value="09:30">9:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="16:30">4:30 PM</option> -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType" class="form-label">Service Interested In *</label>
+                        <select id="serviceType" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="consultation">Initial Consultation</option>
+                            <option value="acne-treatment">Acne Treatment</option>
+                            <option value="facial">Facial & Cleanup</option>
+                            <option value="chemical-peel">Chemical Peel</option>
+                            <option value="laser-treatment">Laser Treatment</option>
+                            <option value="botox-fillers">Botox & Fillers</option>
+                            <option value="skin-cancer-screening">Skin Cancer Screening</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredDoctor" class="form-label">Preferred Doctor (Optional)</label>
+                        <select id="preferredDoctor" class="form-control">
+                            <option value="">Any Available Doctor</option>
+                            <option value="dr-johnson">Dr. Sarah Johnson</option>
+                            <option value="dr-chen">Dr. Michael Chen</option>
+                            <option value="dr-rodriguez">Dr. Emily Rodriguez</option>
+                            <option value="dr-wilson">Dr. James Wilson</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientMessage" class="form-label">Additional Notes</label>
+                        <textarea id="patientMessage" class="form-control"
+                            placeholder="Please share any specific concerns or questions..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-note">
+                            * Required fields. We'll contact you to confirm your appointment details.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 16px;">
+                        <i class="fas fa-calendar-check"></i> Request Appointment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle (guard element exists)
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav');
+        if (mobileMenuBtn && nav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        }
+
+        // Animated Counter for Stats (animates each counter individually)
+        function animateCounterOnce(counter) {
+            const target = parseInt(counter.getAttribute('data-count'), 10) || 0;
+            let current = parseInt(counter.innerText.replace(/\D/g, ''), 10) || 0;
+
+            // if target is 0 or already reached, set and return
+            if (target <= 0 || current >= target) {
+                counter.innerText = target;
+                return;
+            }
+
+            const duration = 1200; // total animation time in ms
+            const fps = 60;
+            const totalFrames = Math.round((duration / 1000) * fps);
+            const increment = (target - current) / totalFrames;
+            let frame = 0;
+
+            function update() {
+                frame++;
+                current = Math.ceil(current + increment);
+                if (current >= target || frame >= totalFrames) {
+                    counter.innerText = target;
+                } else {
+                    counter.innerText = current;
+                    requestAnimationFrame(update);
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        // Create observer to start animation when .stats enters viewport
+        const statsEl = document.querySelector('.stats');
+        if (statsEl) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // animate each .stat-number once
+                        const counters = statsEl.querySelectorAll('.stat-number');
+                        counters.forEach(counter => animateCounterOnce(counter));
+
+                        // stop observing so it only runs once
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.3 // adjust as needed
+            });
+
+            observer.observe(statsEl);
+        }
+        // Appointment Modal Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const appointmentModal = document.getElementById('appointmentModal');
+            const closeAppointmentModalBtn = document.getElementById('closeAppointmentModal'); // Renamed variable
+            const appointmentForm = document.getElementById('appointmentForm');
+            const appointmentSuccess = document.getElementById('appointmentSuccess');
+
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('appointmentDate').min = today;
+
+            // Function to open appointment modal
+            window.openAppointmentModal = function (doctorId = '', serviceType = '') {
+                if (doctorId) {
+                    document.getElementById('preferredDoctor').value = doctorId;
+                }
+                if (serviceType) {
+                    document.getElementById('serviceType').value = serviceType;
+                }
+                appointmentModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            };
+
+            // Function to close appointment modal - renamed to avoid conflict
+            window.closeAppointmentModalFunc = function () {
+                appointmentModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+                // Hide success message when closing modal
+                setTimeout(() => {
+                    appointmentSuccess.classList.remove('active');
+                }, 300);
+            };
+
+            // Close modal when clicking the X button
+            closeAppointmentModalBtn.addEventListener('click', closeAppointmentModalFunc);
+
+            // Close modal when clicking outside the modal
+            appointmentModal.addEventListener('click', function (e) {
+                if (e.target === appointmentModal) {
+                    closeAppointmentModalFunc();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && appointmentModal.classList.contains('active')) {
+                    closeAppointmentModalFunc();
+                }
+            });
+
+            // Handle form submission
+            appointmentForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get form values
+                const formData = {
+                    firstName: document.getElementById('patientFirstName').value,
+                    lastName: document.getElementById('patientLastName').value,
+                    email: document.getElementById('patientEmail').value,
+                    phone: document.getElementById('patientPhone').value,
+                    date: document.getElementById('appointmentDate').value,
+                    time: document.getElementById('appointmentTime').value,
+                    service: document.getElementById('serviceType').value,
+                    doctor: document.getElementById('preferredDoctor').value,
+                    message: document.getElementById('patientMessage').value
+                };
+
+                // In a real application, you would send this data to a server
+                console.log('Appointment request submitted:', formData);
+
+                // Show success message
+                appointmentSuccess.classList.add('active');
+
+                // Reset form
+                appointmentForm.reset();
+
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    closeAppointmentModalFunc();
+                }, 3000);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

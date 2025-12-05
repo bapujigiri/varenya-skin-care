@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Varenya Skin Care Premium Dermatology & Skin Care Clinic</title>
+    <link rel="icon" type="images" sizes="32x32" href="assets/title-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4a90e2;
+            --secondary: #f06292;
+            --accent: #7e57c2;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #777;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: var(--secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: #0f1a2b;
+            /* dark navy */
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .logo img {
+            width: 105px;
+            /* adjust size as needed */
+            height: 75px;
+            /* keeps proper aspect ratio */
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f8fafc;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* nav ul li a.active {
+            color: var(--secondary);
+        } */
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover:after,
+        nav ul li a.active:after {
+            width: 100%;
+        }
+
+        nav ul li a.active {
+            color: #ff7eb3;
+            /* brighter pink */
+            font-weight: 700;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .appointment-btn {
+            margin-left: 20px;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,255,0.6), rgba(0,0,180,0.6)), url('/assets/Banner3.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            margin-top: 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .breadcrumb li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .breadcrumb li:after {
+            content: '/';
+            position: absolute;
+            right: -15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .breadcrumb li:last-child:after {
+            display: none;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+        }
+
+        .breadcrumb .current {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .info-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card h3 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .time {
+            color: var(--text-light);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0 0 100px;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-placeholder {
+            height: 100%;
+            background: var(--light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+
+        .section-title i {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .page-header h1 {
+                font-size: 36px;
+            }
+        }
+
+
+        /* Appointment Modal Styles */
+        .appointment-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .appointment-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .appointment-modal {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .appointment-modal-overlay.active .appointment-modal {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 30px;
+            border-bottom: 1px solid #eee;
+            background: linear-gradient(135deg, #4a90e2 0%, #7e57c2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #f06292;
+        }
+
+        .modal-content {
+            padding: 30px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+        }
+
+        .success-message.active {
+            display: flex;
+        }
+
+        .success-message i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .modal-header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <!-- <div class="logo">
+                <div class="logo-text">Glow<span>Skin</span></div>
+            </div> -->
+
+            <div class="logo">
+                <a href="home.html">
+                    <img src="/assets/logo-transparent.png" alt="varenya Logo">
+                </a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="javascript:void(0)" class="btn btn-primary appointment-btn"
+                    onclick="openAppointmentModal()">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <ul class="breadcrumb">
+                <li><a href="home.html">Home</a></li>
+                <li class="current">Contact</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>We're here to answer any questions you may have about our services or to schedule your appointment.
+                </p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Our Location</h4>
+                                <p>Plot Number -13, near Jagannath Temple Road, Kolathia, Khandagiri<br>Bhubaneswar, Odisha 751030</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone Number</h4>
+                                <p>+91 97771 71199</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Address</h4>
+                                <p> mishrajibanjyoti@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Office Hours</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">6:00 PM - 9:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Saturday</span>
+                                <span class="time">6:00 PM - 9:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Emergency Contact</h3>
+                        <p>For urgent skin concerns outside of business hours, please call our emergency line:</p>
+                        <div class="contact-item" style="margin-top: 15px;">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Emergency Line</h4>
+                                <p>+91 97771 71199</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Thank you for your message! We'll get back to you within 24
+                        hours.
+                    </div>
+
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select a subject</option>
+                                <option value="appointment">Book an Appointment</option>
+                                <option value="consultation">Free Consultation</option>
+                                <option value="treatment">Treatment Information</option>
+                                <option value="billing">Billing Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" class="form-control"
+                                placeholder="Please describe your inquiry in detail..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <i class="fas fa-map-marked-alt"></i>
+                <h2> Find Our Clinic</h2>
+                <p>Visit us at our conveniently located clinic in the heart of New York</p>
+            </div>
+
+            <div class="map-container">
+                <div class="map-placeholder">
+                    
+                    <!-- <h3>GlowSkin Clinic Location</h3> -->
+                    <!-- <p>Interactive map would be displayed here</p> -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.345001623251!2d85.78138297523573!3d20.254833381207785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7006e97249f%3A0x8a8922370495b6e7!2sVarenya%20Skin%20Care!5e1!3m2!1sen!2sin!4v1763469155805!5m2!1sen!2sin"
+                        width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Varenya Skin Care Clinic</h3>
+                    <p>Your trusted partner for all your dermatological needs. We provide comprehensive skin care
+                        solutions with a personalized approach.</p>
+                    <div class="footer-social">
+                        <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=61581596850064"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" rel="noopener" href="https://youtube.com/@varenyaskincare?si=uq7XgwkPuf8M3Jxc"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/varenyaskincare/"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/varenya-skin-care-58b0a6388/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Acne Treatment</a></li>
+                        <li><a href="#">Skin Consultation</a></li>
+                        <li><a href="#">Chemical Peels</a></li>
+                        <li><a href="#">Laser Treatments</a></li>
+                        <li><a href="#">Anti-Aging Solutions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Plot Number -13, near Jagannath Temple Road, Kolathia, Khandagiri, Bhubaneswar, Odisha 751030</li>
+                        <li><i class="fas fa-phone"></i> +91 97771 71199</li>
+                        <li><i class="fas fa-envelope"></i> mishrajibanjyoti@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 6pm-9pm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Varenya Skin Care Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Appointment Booking Modal -->
+    <div class="appointment-modal-overlay" id="appointmentModal">
+        <div class="appointment-modal">
+            <div class="modal-header">
+                <h2>Book Your Appointment</h2>
+                <button class="close-modal" id="closeAppointmentModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="success-message" id="appointmentSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Thank you for your appointment request!</strong><br>
+                        We'll contact you within 24 hours to confirm your appointment.
+                    </div>
+                </div>
+
+                <form id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientFirstName" class="form-label">First Name *</label>
+                            <input type="text" id="patientFirstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientLastName" class="form-label">Last Name *</label>
+                            <input type="text" id="patientLastName" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientEmail" class="form-label">Email Address *</label>
+                            <input type="email" id="patientEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientPhone" class="form-label">Phone Number *</label>
+                            <input type="tel" id="patientPhone" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentDate" class="form-label">Preferred Date *</label>
+                        <input type="date" id="appointmentDate" class="form-control" required min="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentTime" class="form-label">Preferred Time *</label>
+                        <select id="appointmentTime" class="form-control" required>
+                            <option value="">Select a time</option>
+                            <option value="06:00">06:00 PM</option>
+                            <option value="06:30">06:30 PM</option>
+                            <option value="07:00">07:00 PM</option>
+                            <option value="07:30">07:30 PM</option>
+                            <option value="08:00">08:00 PM</option>
+                            <option value="08:30">08:30 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType" class="form-label">Service Interested In *</label>
+                        <select id="serviceType" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="consultation">Initial Consultation</option>
+                            <option value="acne-treatment">Acne Treatment</option>
+                            <option value="facial">Facial & Cleanup</option>
+                            <option value="chemical-peel">Chemical Peel</option>
+                            <option value="laser-treatment">Laser Treatment</option>
+                            <option value="botox-fillers">Botox & Fillers</option>
+                            <option value="skin-cancer-screening">Skin Cancer Screening</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredDoctor" class="form-label">Preferred Doctor (Optional)</label>
+                        <select id="preferredDoctor" class="form-control">
+                            <option value="">Any Available Doctor</option>
+                            <option value="dr-johnson">Dr. Sarah Johnson</option>
+                            <option value="dr-chen">Dr. Michael Chen</option>
+                            <option value="dr-rodriguez">Dr. Emily Rodriguez</option>
+                            <option value="dr-wilson">Dr. James Wilson</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientMessage" class="form-label">Additional Notes</label>
+                        <textarea id="patientMessage" class="form-control"
+                            placeholder="Please share any specific concerns or questions..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-note">
+                            * Required fields. We'll contact you to confirm your appointment details.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 16px;">
+                        <i class="fas fa-calendar-check"></i> Request Appointment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show a success message
+            console.log('Form submitted with:', { firstName, lastName, email, phone, subject, message });
+
+            // Show success message
+            document.getElementById('successMessage').classList.add('active');
+
+            // Reset form
+            document.getElementById('contactForm').reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('successMessage').classList.remove('active');
+            }, 5000);
+        });
+        // Appointment Modal Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const appointmentModal = document.getElementById('appointmentModal');
+            const closeAppointmentModalBtn = document.getElementById('closeAppointmentModal'); // Renamed variable
+            const appointmentForm = document.getElementById('appointmentForm');
+            const appointmentSuccess = document.getElementById('appointmentSuccess');
+
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('appointmentDate').min = today;
+
+            // Function to open appointment modal
+            window.openAppointmentModal = function (doctorId = '', serviceType = '') {
+                if (doctorId) {
+                    document.getElementById('preferredDoctor').value = doctorId;
+                }
+                if (serviceType) {
+                    document.getElementById('serviceType').value = serviceType;
+                }
+                appointmentModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            };
+
+            // Function to close appointment modal - renamed to avoid conflict
+            window.closeAppointmentModalFunc = function () {
+                appointmentModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+                // Hide success message when closing modal
+                setTimeout(() => {
+                    appointmentSuccess.classList.remove('active');
+                }, 300);
+            };
+
+            // Close modal when clicking the X button
+            closeAppointmentModalBtn.addEventListener('click', closeAppointmentModalFunc);
+
+            // Close modal when clicking outside the modal
+            appointmentModal.addEventListener('click', function (e) {
+                if (e.target === appointmentModal) {
+                    closeAppointmentModalFunc();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && appointmentModal.classList.contains('active')) {
+                    closeAppointmentModalFunc();
+                }
+            });
+
+            // Handle form submission
+            appointmentForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get form values
+                const formData = {
+                    firstName: document.getElementById('patientFirstName').value,
+                    lastName: document.getElementById('patientLastName').value,
+                    email: document.getElementById('patientEmail').value,
+                    phone: document.getElementById('patientPhone').value,
+                    date: document.getElementById('appointmentDate').value,
+                    time: document.getElementById('appointmentTime').value,
+                    service: document.getElementById('serviceType').value,
+                    doctor: document.getElementById('preferredDoctor').value,
+                    message: document.getElementById('patientMessage').value
+                };
+
+                // In a real application, you would send this data to a server
+                console.log('Appointment request submitted:', formData);
+
+                // Show success message
+                appointmentSuccess.classList.add('active');
+
+                // Reset form
+                appointmentForm.reset();
+
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    closeAppointmentModalFunc();
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+
+</html>

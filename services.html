@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Varenya Skin Care Premium Dermatology & Skin Care Clinic</title>
+    <link rel="icon" type="images" sizes="32x32" href="assets/title-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4a90e2;
+            --secondary: #f06292;
+            --accent: #7e57c2;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #777;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: var(--secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: #0f1a2b; /* dark navy */
+            color: #f8fafc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-left: 10px;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+        .logo img {
+            width: 105px;  /* adjust size as needed */
+            height: 75px;  /* keeps proper aspect ratio */
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f8fafc;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a.active {
+            color: #ff7eb3;
+            font-weight: 700;
+        }
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after,
+        nav ul li a.active:after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .appointment-btn {
+            margin-left: 20px;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,255,0.6), rgba(0,0,180,0.6)), url('/assets/Banner2.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 80px;
+            margin-top: 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .breadcrumb li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .breadcrumb li:after {
+            content: '/';
+            position: absolute;
+            right: -15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .breadcrumb li:last-child:after {
+            display: none;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+        }
+
+        .breadcrumb .current {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Services Overview */
+        .services-overview {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .services-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            display: none;
+        }
+
+        .service-card.active {
+            display: block;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .service-content h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .service-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Treatment Process */
+        .treatment-process {
+            padding: 100px 0;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background: var(--primary);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .process-step h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(rgba(74, 144, 226, 0.9), rgba(74, 144, 226, 0.9)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--primary);
+            border: 2px solid white;
+        }
+
+        .cta .btn:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .process-steps:before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .page-header h1 {
+                font-size: 36px;
+            }
+
+            .services-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 10px;
+            }
+        }
+        /* Appointment Modal Styles */
+        .appointment-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .appointment-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .appointment-modal {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .appointment-modal-overlay.active .appointment-modal {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 30px;
+            border-bottom: 1px solid #eee;
+            background: linear-gradient(135deg, #4a90e2 0%, #7e57c2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #f06292;
+        }
+
+        .modal-content {
+            padding: 30px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+        }
+
+        .success-message.active {
+            display: flex;
+        }
+
+        .success-message i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .modal-header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <!-- <div class="logo">
+                <div class="logo-text">Glow<span>Skin</span></div>
+            </div> -->
+            <div class="logo"> 
+                <a href="home.html">
+                    <img src="/assets/logo-transparent.png" alt="Varenya Logo">
+                </a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="javascript:void(0)" class="btn btn-primary appointment-btn" onclick="openAppointmentModal()">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <ul class="breadcrumb">
+                <li><a href="home.html">Home</a></li>
+                <li class="current">Services</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comprehensive Skin Care Solutions</h2>
+                <p>We offer a wide range of dermatological treatments tailored to your unique skin needs and concerns.</p>
+            </div>
+            
+            <!-- <div class="services-tabs">
+                <button class="tab-btn active" data-category="all">All Services</button>
+                <button class="tab-btn" data-category="facial">Facials & Cleanups</button>
+                <button class="tab-btn" data-category="acne">Acne Treatments</button>
+                <button class="tab-btn" data-category="anti-aging">Anti-Aging</button>
+                <button class="tab-btn" data-category="laser">Laser Treatments</button>
+            </div> -->
+            
+            <div class="services-grid">
+                <!-- Facial Treatments -->
+                <div class="service-card active" data-category="facial">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Hydrating Facial">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3>Hydrating Facial</h3>
+                        <p>Deeply moisturizing treatment that replenishes skin's moisture barrier and restores radiance.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Deep cleansing & exfoliation</li>
+                            <li><i class="fas fa-check"></i> Hydrating mask application</li>
+                            <li><i class="fas fa-check"></i> Facial massage techniques</li>
+                            <li><i class="fas fa-check"></i> Suitable for all skin types</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">₹120</div>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card active" data-category="facial">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Chemical Peel">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Chemical Peel</h3>
+                        <p>Advanced exfoliation treatment that improves skin texture, tone, and reduces signs of aging.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Reduces fine lines & wrinkles</li>
+                            <li><i class="fas fa-check"></i> Improves skin texture & tone</li>
+                            <li><i class="fas fa-check"></i> Minimizes pores & dark spots</li>
+                            <li><i class="fas fa-check"></i> Customized strength options</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">₹200</div>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Acne Treatments -->
+                <div class="service-card active" data-category="acne">
+                    <div class="service-image">
+                        <img src="assets/Acne-solutions.jpg" alt="Acne Treatment">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3>Acne Clear Treatment</h3>
+                        <p>Comprehensive acne solution that targets active breakouts and prevents future occurrences.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Medical-grade extraction</li>
+                            <li><i class="fas fa-check"></i> Anti-inflammatory treatment</li>
+                            <li><i class="fas fa-check"></i> Blue light therapy</li>
+                            <li><i class="fas fa-check"></i> Customized home care plan</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">₹180</div>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Anti-Aging Treatments -->
+                <div class="service-card active" data-category="anti-aging">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Botox Treatment">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3>Botox & Fillers</h3>
+                        <p>Minimally invasive treatments to reduce wrinkles, restore volume, and rejuvenate your appearance.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Reduces dynamic wrinkles</li>
+                            <li><i class="fas fa-check"></i> Restores facial volume</li>
+                            <li><i class="fas fa-check"></i> Quick procedure with minimal downtime</li>
+                            <li><i class="fas fa-check"></i> Natural-looking results</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">₹350+</div>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Laser Treatments -->
+                <div class="service-card active" data-category="laser">
+                    <div class="service-image">
+                        <img src="assets/laser-treatment.jpg" alt="Laser Hair Removal">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Laser Hair Removal</h3>
+                        <p>Permanent reduction of unwanted hair using advanced laser technology for smooth, hair-free skin.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> FDA-approved technology</li>
+                            <li><i class="fas fa-check"></i> Suitable for all skin types</li>
+                            <li><i class="fas fa-check"></i> Minimal discomfort</li>
+                            <li><i class="fas fa-check"></i> Long-lasting results</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">₹250/session</div>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-card active" data-category="laser">
+                    <div class="service-image">
+                        <img src="/assets/Laser-Resurfacing.jpg" alt="Laser Resurfacing">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-burn"></i>
+                        </div>
+                        <h3>Laser Skin Resurfacing</h3>
+                        <p>Advanced laser treatment to improve skin texture, reduce scars, and promote collagen production.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Reduces scars & wrinkles</li>
+                            <li><i class="fas fa-check"></i> Improves skin tone & texture</li>
+                            <li><i class="fas fa-check"></i> Stimulates collagen production</li>
+                            <li><i class="fas fa-check"></i> Customizable treatment depth</li>
+                        </ul>
+                        <div class="service-price">
+                            <div class="price">₹400</div>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Process -->
+    <section class="treatment-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Treatment Process</h2>
+                <p>We follow a systematic approach to ensure the best possible outcomes for your skin health.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>Comprehensive skin analysis and discussion of your concerns and goals.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Personalized Plan</h3>
+                    <p>Customized treatment plan tailored to your specific skin type and needs.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Treatment</h3>
+                    <p>Expert administration of selected treatments using advanced technology.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Aftercare</h3>
+                    <p>Detailed instructions and follow-up to ensure optimal results and recovery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services and treatments.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I know which treatment is right for me?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>During your initial consultation, our dermatologists will conduct a thorough skin analysis and discuss your concerns, goals, and medical history. Based on this assessment, we'll recommend the most appropriate treatments for your specific needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is there any downtime after treatments?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Downtime varies depending on the treatment. Non-invasive procedures like facials typically have no downtime, while more intensive treatments like chemical peels or laser resurfacing may require a few days of recovery. We'll provide detailed aftercare instructions specific to your treatment.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How many sessions will I need?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The number of sessions depends on your specific concerns and the treatment selected. For example, laser hair removal typically requires 6-8 sessions for optimal results, while some facials may show improvement after a single session. We'll create a personalized treatment plan with an estimated number of sessions during your consultation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are the treatments painful?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most treatments are well-tolerated with minimal discomfort. We use advanced techniques and, when appropriate, topical anesthetics to ensure your comfort. Any sensations during treatment are typically brief, and we'll guide you through what to expect during your procedure.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you accept insurance for dermatology services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept insurance for medically necessary dermatology services. Cosmetic procedures are typically not covered by insurance. Our billing department can verify your benefits and provide cost estimates before your treatment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Skin?</h2>
+            <p>Book your consultation today and take the first step towards healthier, more radiant skin.</p>
+            <!-- <a href="#" class="btn">Schedule an Appointment</a> -->
+            <a href="javascript:void(0)" class="btn appointment-btn" onclick="openAppointmentModal()">Schedule an Appointment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Varenya Skin Care Clinic</h3>
+                    <p>Your trusted partner for all your dermatological needs. We provide comprehensive skin care solutions with a personalized approach.</p>
+                    <div class="footer-social">
+                        <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=61581596850064"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" rel="noopener" href="https://youtube.com/@varenyaskincare?si=uq7XgwkPuf8M3Jxc"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/varenyaskincare/"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/varenya-skin-care-58b0a6388/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Acne Treatment</a></li>
+                        <li><a href="#">Skin Consultation</a></li>
+                        <li><a href="#">Chemical Peels</a></li>
+                        <li><a href="#">Laser Treatments</a></li>
+                        <li><a href="#">Anti-Aging Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Plot Number -13, near Jagannath Temple Road, Kolathia, Khandagiri, Bhubaneswar, Odisha 751030</li>
+                        <li><i class="fas fa-phone"></i> +91 97771 71199</li>
+                        <li><i class="fas fa-envelope"></i> mishrajibanjyoti@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 6pm-9pm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Varenya Skin Care Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Appointment Booking Modal -->
+    <div class="appointment-modal-overlay" id="appointmentModal">
+        <div class="appointment-modal">
+            <div class="modal-header">
+                <h2>Book Your Appointment</h2>
+                <button class="close-modal" id="closeAppointmentModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="success-message" id="appointmentSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Thank you for your appointment request!</strong><br>
+                        We'll contact you within 24 hours to confirm your appointment.
+                    </div>
+                </div>
+
+                <form id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientFirstName" class="form-label">First Name *</label>
+                            <input type="text" id="patientFirstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientLastName" class="form-label">Last Name *</label>
+                            <input type="text" id="patientLastName" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="patientEmail" class="form-label">Email Address *</label>
+                            <input type="email" id="patientEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientPhone" class="form-label">Phone Number *</label>
+                            <input type="tel" id="patientPhone" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentDate" class="form-label">Preferred Date *</label>
+                        <input type="date" id="appointmentDate" class="form-control" required min="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentTime" class="form-label">Preferred Time *</label>
+                        <select id="appointmentTime" class="form-control" required>
+                            <option value="">Select a time</option>
+                            <option value="06:00">06:00 PM</option>
+                            <option value="06:30">06:30 PM</option>
+                            <option value="07:00">07:00 PM</option>
+                            <option value="07:30">07:30 PM</option>
+                            <option value="08:00">08:00 PM</option>
+                            <option value="08:30">08:30 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType" class="form-label">Service Interested In *</label>
+                        <select id="serviceType" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="consultation">Initial Consultation</option>
+                            <option value="acne-treatment">Acne Treatment</option>
+                            <option value="facial">Facial & Cleanup</option>
+                            <option value="chemical-peel">Chemical Peel</option>
+                            <option value="laser-treatment">Laser Treatment</option>
+                            <option value="botox-fillers">Botox & Fillers</option>
+                            <option value="skin-cancer-screening">Skin Cancer Screening</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredDoctor" class="form-label">Preferred Doctor (Optional)</label>
+                        <select id="preferredDoctor" class="form-control">
+                            <option value="">Any Available Doctor</option>
+                            <option value="dr-johnson">Dr. Sarah Johnson</option>
+                            <option value="dr-chen">Dr. Michael Chen</option>
+                            <option value="dr-rodriguez">Dr. Emily Rodriguez</option>
+                            <option value="dr-wilson">Dr. James Wilson</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientMessage" class="form-label">Additional Notes</label>
+                        <textarea id="patientMessage" class="form-control"
+                            placeholder="Please share any specific concerns or questions..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-note">
+                            * Required fields. We'll contact you to confirm your appointment details.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 16px;">
+                        <i class="fas fa-calendar-check"></i> Request Appointment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Service Tabs Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-category');
+                
+                // Show/hide service cards based on category
+                serviceCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // FAQ Accordion Functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+         // Appointment Modal Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const appointmentModal = document.getElementById('appointmentModal');
+            const closeAppointmentModalBtn = document.getElementById('closeAppointmentModal'); // Renamed variable
+            const appointmentForm = document.getElementById('appointmentForm');
+            const appointmentSuccess = document.getElementById('appointmentSuccess');
+
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('appointmentDate').min = today;
+
+            // Function to open appointment modal
+            window.openAppointmentModal = function (doctorId = '', serviceType = '') {
+                if (doctorId) {
+                    document.getElementById('preferredDoctor').value = doctorId;
+                }
+                if (serviceType) {
+                    document.getElementById('serviceType').value = serviceType;
+                }
+                appointmentModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            };
+
+            // Function to close appointment modal - renamed to avoid conflict
+            window.closeAppointmentModalFunc = function () {
+                appointmentModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+                // Hide success message when closing modal
+                setTimeout(() => {
+                    appointmentSuccess.classList.remove('active');
+                }, 300);
+            };
+
+            // Close modal when clicking the X button
+            closeAppointmentModalBtn.addEventListener('click', closeAppointmentModalFunc);
+
+            // Close modal when clicking outside the modal
+            appointmentModal.addEventListener('click', function (e) {
+                if (e.target === appointmentModal) {
+                    closeAppointmentModalFunc();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && appointmentModal.classList.contains('active')) {
+                    closeAppointmentModalFunc();
+                }
+            });
+
+            // Handle form submission
+            appointmentForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get form values
+                const formData = {
+                    firstName: document.getElementById('patientFirstName').value,
+                    lastName: document.getElementById('patientLastName').value,
+                    email: document.getElementById('patientEmail').value,
+                    phone: document.getElementById('patientPhone').value,
+                    date: document.getElementById('appointmentDate').value,
+                    time: document.getElementById('appointmentTime').value,
+                    service: document.getElementById('serviceType').value,
+                    doctor: document.getElementById('preferredDoctor').value,
+                    message: document.getElementById('patientMessage').value
+                };
+
+                // In a real application, you would send this data to a server
+                console.log('Appointment request submitted:', formData);
+
+                // Show success message
+                appointmentSuccess.classList.add('active');
+
+                // Reset form
+                appointmentForm.reset();
+
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    closeAppointmentModalFunc();
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
