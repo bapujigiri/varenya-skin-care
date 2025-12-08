@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Varenya Skin Care - Premium Dermatology & Skin Care Clinic</title>
+    <!-- In all HTML files, add this line in the head section -->
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
     <link rel="icon" type="images" sizes="32x32" href="assets/title-logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -40,7 +42,7 @@
 
         .btn {
             display: inline-block;
-            padding: 14px 32px;
+            padding: 12px 30px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
@@ -109,7 +111,8 @@
 
         /* Header Styles */
         header {
-            background: #0f1a2b; /* dark navy */
+            background: #0f1a2b;
+            /* dark navy */
             color: white;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             position: fixed;
@@ -150,8 +153,10 @@
         }
 
         .logo img {
-            width: 105px;  /* adjust size as needed */
-            height: 75px;  /* keeps proper aspect ratio */
+            width: 105px;
+            /* adjust size as needed */
+            height: 75px;
+            /* keeps proper aspect ratio */
             display: block;
         }
 
@@ -189,9 +194,11 @@
         }
 
         nav ul li a.active {
-            color: #ff7eb3; /* brighter pink */
+            color: #ff7eb3;
+            /* brighter pink */
             font-weight: 700;
         }
+
         nav ul li a:hover {
             color: var(--primary);
         }
@@ -209,6 +216,7 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            /* margin-left: auto; */
         }
 
         /* Hero Section */
@@ -514,18 +522,6 @@
             animation: fadeIn 0.5s ease;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         .testimonial-slide:before {
             content: '"';
             position: absolute;
@@ -722,26 +718,66 @@
             font-size: 14px;
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 48px;
             }
+
+            .appointment-btn {
+                order: 2;
+            }
+
         }
 
         @media (max-width: 768px) {
             .header-container {
                 flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .header-actions {
+                order: 3;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                /* center Book Appointment */
+                margin-top: 10px;
+            }
+
+            .logo {
+                order: 1;
+                flex: 1;
+                /* logo on left */
             }
 
             .mobile-menu {
                 display: block;
+                order: 2;
+                /* hamburger on right */
             }
+
+            /* .appointment-btn {
+                order: 2;
+            } */
 
             nav {
                 width: 100%;
-                margin-top: 15px;
+                margin-top: 10px;
                 display: none;
+                order: 4;
             }
 
             nav.active {
@@ -934,7 +970,7 @@
             <!-- <div class="logo">
                 <div class="logo-text">Glow<span>Skin</span></div>
             </div> -->
-            <div class="logo"> 
+            <div class="logo">
                 <a href="index.html">
                     <img src="./assets/logo-transparent.png" alt="varenya Logo">
                 </a>
@@ -1128,7 +1164,8 @@
             <div class="testimonials-container">
                 <div class="testimonial-slide active">
                     <div class="testimonial-content">
-                        <p>"After struggling with adult acne for years, the team at Varenya Skin Care Clinic developed a personalized
+                        <p>"After struggling with adult acne for years, the team at Varenya Skin Care Clinic developed a
+                            personalized
                             treatment plan that completely cleared my skin. I finally feel confident without makeup for
                             the first time in a decade!"</p>
                         <div class="testimonial-author">
@@ -1146,7 +1183,8 @@
 
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p>"The laser treatments at Varenya Skin Care Clinic have taken 10 years off my appearance. The staff is
+                        <p>"The laser treatments at Varenya Skin Care Clinic have taken 10 years off my appearance. The
+                            staff is
                             incredibly knowledgeable and made me feel comfortable throughout the entire process. I
                             couldn't be happier with my results!"</p>
                         <div class="testimonial-author">
@@ -1207,10 +1245,17 @@
                     <p>Your trusted partner for all your dermatological needs. We provide comprehensive skin care
                         solutions with a personalized approach.</p>
                     <div class="footer-social">
-                        <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=61581596850064"><i class="fab fa-facebook-f"></i></a>
-                        <a target="_blank" rel="noopener" href="https://youtube.com/@varenyaskincare?si=uq7XgwkPuf8M3Jxc"><i class="fab fa-youtube"></i></a>
-                        <a target="_blank" rel="noopener" href="https://www.instagram.com/varenyaskincare/"><i class="fab fa-instagram"></i></a>
-                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/varenya-skin-care-58b0a6388/"><i class="fab fa-linkedin-in"></i></a>
+                        <a target="_blank" rel="noopener"
+                            href="https://www.facebook.com/profile.php?id=61581596850064"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" rel="noopener"
+                            href="https://youtube.com/@varenyaskincare?si=uq7XgwkPuf8M3Jxc"><i
+                                class="fab fa-youtube"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/varenyaskincare/"><i
+                                class="fab fa-instagram"></i></a>
+                        <a target="_blank" rel="noopener"
+                            href="https://www.linkedin.com/in/varenya-skin-care-58b0a6388/"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
@@ -1239,7 +1284,8 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Plot Number -13, near Jagannath Temple Road, Kolathia, Khandagiri, Bhubaneswar, Odisha 751030</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Plot Number -13, near Jagannath Temple Road, Kolathia,
+                            Khandagiri, Bhubaneswar, Odisha 751030</li>
                         <li><i class="fas fa-phone"></i> +91 97771 71199</li>
                         <li><i class="fas fa-envelope"></i> mishrajibanjyoti@gmail.com</li>
                         <li><i class="fas fa-clock"></i> Mon-Sat: 6pm-9pm</li>
